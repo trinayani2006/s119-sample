@@ -1,0 +1,44 @@
+9014509478
+
+import java.util.Scanner;
+
+public class Example {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Read the number of elements
+        int n = scanner.nextInt();
+
+        // Validate input size
+        if (n <= 0) {
+            System.out.println("Array size must be greater than 0");
+            scanner.close();
+            return;
+        }
+
+        int[] arr = new int[n];
+
+        // Read the array elements
+        for (int i = 0; i < n; i++) {
+            arr[i] = scanner.nextInt();
+        }
+
+        // Initialize min and max
+        int min = arr[0], max = arr[0];
+
+        // Find min and max
+        for (int i = 1; i < n; i++) {
+            if (arr[i] < min) {
+                min = arr[i];
+            }
+            if (arr[i] > max) {
+                max = arr[i];
+            }
+        }
+
+        // Print the result
+        System.out.println(max + " " + min);
+
+        scanner.close();
+    }
+}
